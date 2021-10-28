@@ -1,0 +1,227 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+#master{
+    width: 100%;
+    height: 100%;
+}
+h2{
+    width:100%;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#top{
+    width: 100%;
+    height: 80px;
+    background-color: #6a4873;
+
+}
+#top-btn{
+    width: 70px;
+    height: auto;
+    float: left;
+    margin-top: 10px;
+}
+
+#tr_cabecalho th{
+      text-align:center;
+}
+
+#tr_corpo{
+    border-bottom:2px solid #000;
+}
+#tr_corpo td {
+    text-align: center;
+}
+
+
+    #titulo {
+        float: left;
+        width: 600px;
+        height: 80px;
+        font-family: fantasy;
+        color: #fff;
+        text-align: center;
+        align-items: center;
+        padding-top: 30px;
+        z-index: 15;
+    }
+#slogan{
+    width: auto;
+    height: 80px;
+    float: left;
+    color: #fff;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    text-align: left;
+    align-items:left;
+    
+
+}
+
+#pesquisa{
+    width: 90%;
+    height: 150px;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 0;
+    z-index: -20;
+}
+#menu ul{
+    
+    width: 100%;
+    height: 100%;
+    background-color: #6a4873;
+    float: left;
+    padding: 0;    
+    justify-content: center;
+}
+#menu{
+    width: 200px;
+    height: auto;
+    background-color: #6a4873;
+    position: absolute;
+    z-index: 50;
+    display: none ;
+    padding: 0;
+    margin-top: 0px;
+    margin-left: 0;
+}
+
+#menu ul li{
+    width: 100%;
+    height: 60px;
+    margin-top: 15px;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    z-index: 10;
+    background-color: #6a4873;
+    padding: 20px ;
+    align-content: center;
+    justify-content: center;
+    margin-left: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+#menu ul li:hover{
+    font-weight: bold;
+    transition-delay: 0.1;
+    transform: matrix();
+   
+}
+
+#lbl-menu{
+    width: 60px;
+    height: 60px;
+
+}
+#lbl-menu img{
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+#btn-menu{
+    display: none;
+}
+
+#btn-menu:checked ~ #menu{
+    display: block;
+    transition-delay: 2s;
+    transform: rotate();
+}
+
+#carrossel{
+    justify-content: center;
+    width: 60%;
+    height: 400px;
+    margin-top: 10px;
+}
+
+
+
+#btn-div{
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#pesquisa{
+    width: 90%;
+    height: 200px;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+#exibicao{
+    width: 90%;
+    height: 400px;
+    margin-left: 5%;
+    margin-top: -30px;
+}
+#exibicao div{
+    float: left;
+}
+#cards{
+    width: 40%;
+    height: auto;
+    float: left;
+}
+.cards-cards{
+    width: 45%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.cards-cards div{
+    width: 100%;
+    height: 100%;
+}
+
+.cards-cards div img{
+    width: 100%;
+    height: 90px;
+}
+
+.cards-cards div span{
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+#footer{
+    width: 100%;
+    height: 80px;
+    background-color: #6a4873;
+    margin-bottom: 0;
+}
+.exibicao-titulo{
+    width: 100%;
+}
+
+#principal{
+    width:90%;
+    height:100%;
+    margin-left:5%;
+    margin-top:70px;
+}
+#pesquisarCNPJ {
+    width: 100%;
+    height: 100%;
+    margin-left: 25%;
+    margin-top: 220px;
+}

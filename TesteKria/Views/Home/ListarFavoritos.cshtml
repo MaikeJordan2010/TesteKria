@@ -1,0 +1,37 @@
+﻿@model TesteKria.ViewHelper.ViewHelper
+@{
+    ViewData["Title"] = "ListarFavoritos";
+}
+
+<h2>Listar Favoritos</h2>
+
+<div id="">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr id="tr_cabecalho">
+                <th scope="col">Usuario</th>
+                <th scope="col">Repositório</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Perfil do Dono</th>
+                <th scope="col">Data de Criação</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var obj in Model.ListaRepositorio)
+            {
+                <tr id="tr_corpo">
+                    <td>@obj.Dono.Nome</td>
+                    <td>@obj.Nome</td>
+                    <td>@obj.Descricao</td>
+                    <td><a href="@obj.Dono.Url">Perfil</a></td>
+                    <td>@obj.Dt_Criacao</td>
+                   
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>

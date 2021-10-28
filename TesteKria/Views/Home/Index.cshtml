@@ -1,0 +1,47 @@
+﻿@model TesteKria.ViewHelper.ViewHelper
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Listar Repositórios</h2>
+
+<div>
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="pesquisarRepositorio" class="sr-only">Pesquisar Repositorio</label>
+            <input type="text" class="form-control" id="pesquisarRepositorio" placeholder="Repositório" name="Repositorio">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+    </form>
+
+</div>
+
+<div id="">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr id="tr_cabecalho">
+                <th scope="col">Usuario</th>
+                <th scope="col">Repositório</th>
+                <th scope="col">Data de Criação</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var obj in Model.ListaRepositorio)
+            {
+                <tr id="tr_corpo">
+                    <td>@obj.Dono.Nome</td>
+                    <td>@obj.Nome</td>
+                    <td>@obj.Dt_Criacao</td>
+                    <td>
+                        <a href="@Url.Action( "Detalhe", "Home", new { Repositorio = obj.Nome, ID = obj.ID })" class="btn btn-primary" role="button" data-bs-toggle="button">Detalhe</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>

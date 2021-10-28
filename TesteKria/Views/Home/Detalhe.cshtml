@@ -1,0 +1,95 @@
+﻿@model TesteKria.Models.Repositorio
+
+@{
+    ViewData["Title"] = "Detalhe";
+}
+
+<h2>Detalhe</h2>
+
+
+<button class="btn btn-primary mb-3" onclick="listarFavoritos('@Model.Dono.Nome','@Model.Dono.Url','@Model.Linguagem','@Model.Nome','@Model.ID','@Model.Dt_Criacao','@Model.Dt_Atualizacao','@Model.Descricao')">Favorito</button>
+
+<div id="">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="nomeDono">Dono Do Repositório</label>
+            <input type="text" class="form-control" id="nomeDono" name="NomeDono" value="@Model.Dono.Nome" disabled />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="nomeDono">Perfil do Dono</label>
+            <input type="text" class="form-control" id="urlDono" name="UrlDono" value="@Model.Dono.Url" disabled />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nomeDono">Perfil do Dono</label>
+            <input type="text" class="form-control" id="linguagem" name="Linguagem" value="@Model.Linguagem" disabled />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="cliente">Repositório</label>
+            <input type="text" class="form-control" id="nome" name="Nome" value="@Model.Nome"  disabled />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="cliente">ID</label>
+            <input type="text" class="form-control" id="id" name="ID" value="@Model.ID" disabled  />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="dt_criacao">Data de Criação</label>
+            <input type="text" class="form-control" id="dt_criacao" name="Dt_Criacao" value="@Model.Dt_Criacao"  disabled />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="dt_atualizacao">Data de Atualização</label>
+            <input type="text" class="form-control" id="dt_atualizacao" name="Dt_Atualizacao" value="@Model.Dt_Atualizacao" disabled />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <textarea class="form-control" id="descricao" name="Descricao" value="@Model.Descricao" rows="3" disabled>@Model.Descricao</textarea>
+    </div>
+
+</div>
+
+
+
+<script>
+
+    ////////////////////////////// função para chamar a API passando os parametros para gravação ///////////////////////////////
+    function listarFavoritos(nomeDono, url, linguagem, nome, id, dt_cri, dt_atu, descricao) {
+
+        /////////// Criando Formulario ////////////
+        var form = new FormData();
+        form.append("NomeDono", nomeDono);                      // adicionando parametro e valor
+        form.append("UrlDono", url);                            // adicionando parametro e valor
+        form.append("Linguagem", linguagem);                    // adicionando parametro e valor
+        form.append("Nome", nome);                              // adicionando parametro e valor
+        form.append("ID", id);                                  // adicionando parametro e valor
+        form.append("Dt_Criacao", dt_cri);                      // adicionando parametro e valor
+        form.append("Dt_Atualizacao", dt_atu);                  // adicionando parametro e valor
+        form.append("Descricao", descricao);                    // adicionando parametro e valor
+
+
+        var http = new XMLHttpRequest();                        // Instanciando obj de Requisição 
+
+        http.open('POST', "../../api/RepositorioAPI/Add", true);// abrinco conexao e passando Metodo, url, e true para sincrono
+
+        http.onreadystatechange = function () {                 // verifica o status da requisição
+            if (http.readyState == 4 && http.status == 200) {   // caso true
+                alert("Adicionado a lista com sucesso!");
+            }
+        }
+
+        http.send(form);                                        // abrinco requisição
+
+    }
+</script>
+
+
